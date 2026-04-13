@@ -56,7 +56,7 @@ body {
 
 .features-list {
     list-style: none;
-    padding: 0;
+    padding: 4px 12px;
 }
 
 .features-list li {
