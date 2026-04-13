@@ -15,7 +15,7 @@ body {
 }
 
 .cards-container {
-    display: flex;
+    display: flex-wrap;
     flex-direction: row;
     gap: 24px;
     flex-wrap: nowrap;
@@ -26,7 +26,7 @@ body {
 .card {
     background-color: #f2f1ed;
     border-radius: 12px;
-    padding: 40px 32px;
+    padding: 48px 40px;
     width: 320px;
     flex-shrink: 0;
 }
@@ -49,7 +49,7 @@ body {
 }
 
 .includes-text {
-    font-size: 16px;
+    font-size: 16p x;
     color: #333;
     margin-bottom: 16px;
 }
