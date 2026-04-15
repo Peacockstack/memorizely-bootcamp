@@ -4,9 +4,34 @@
     box-sizing: border-box;
 }
 
+:root {
+    color-scheme: light dark;
+    /* Tailwind (light) */
+    --bg: var(--tw-stone-100);
+    --card-bg: var(--tw-stone-50);
+    --text: var(--tw-stone-900);
+    --text-muted: var(--tw-stone-600);
+    --checkmark: var(--tw-stone-700);
+    --button-bg: var(--tw-stone-200);
+    --button-bg-hover: var(--tw-stone-300);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Tailwind stone (dark) */
+        --bg: var(--tw-stone-950);
+        --card-bg: var(--tw-stone-900);
+        --text: var(--tw-stone-50);
+        --text-muted: var(--tw-stone-300);
+        --checkmark: var(--tw-stone-200);
+        --button-bg: var(--tw-stone-800);
+        --button-bg-hover: var(--tw-stone-700);
+    }
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #f5f5f5;
+    background-color: var(--bg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,42 +40,45 @@ body {
 }
 
 .cards-container {
-    display: flex-wrap;
+    display: flex;
     flex-direction: row;
     gap: 24px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .card {
-    background-color: #f2f1ed;
-    border-radius: 12px;
-    padding: 48px 40px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 16px 16px;
     width: 320px;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-title {
     font-size: 32px;
-    font-weight: 600;
-    color: #333;
+    font-weight: 400;
+    color: var(--text);
     margin-bottom: 8px;
 }
 
 .card-price {
     font-size: 20px;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 24px;
 }
 
 .card-content {
     margin-bottom: 32px;
+    flex: 1;
 }
 
 .includes-text {
-    font-size: 16p x;
-    color: #333;
+    font-size: 16px;
+    color: var(--text);
     margin-bottom: 16px;
 }
 
@@ -64,11 +92,11 @@ body {
     align-items: center;
     margin-bottom: 12px;
     font-size: 15px;
-    color: #333;
+    color: var(--text);
 }
 
 .checkmark {
-    color: #4a4a4a;
+    color: var(--checkmark);
     font-size: 18px;
     margin-right: 12px;
     font-weight: bold;
@@ -76,21 +104,21 @@ body {
 
 .download-button {
     width: fit-content;
-    background-color: #e6e5e0;
+    background-color: var(--button-bg);
     border: none;
     border-radius: 999px;
     padding: 14px 24px;
     font-size: 16px;
     font-weight: 500;
-    color: #333;
+    color: var(--text);
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
 .download-button:hover {
-    background-color: #D8D6CE;
+    background-color: var(--button-bg-hover);
 }
 
 .download-button:active {
-    background-color: #D8D6CE;
+    background-color: var(--button-bg-hover);
 }

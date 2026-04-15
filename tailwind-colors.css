@@ -1,0 +1,19 @@
+/*
+  Tailwind CSS color palette (subset).
+  Source: Tailwind default colors (stone scale).
+*/
+
+:root {
+  --tw-stone-50: #fafaf9;
+  --tw-stone-100: #f5f5f4;
+  --tw-stone-200: #e7e5e4;
+  --tw-stone-300: #d6d3d1;
+  --tw-stone-400: #a8a29e;
+  --tw-stone-500: #78716c;
+  --tw-stone-600: #57534e;
+  --tw-stone-700: #44403c;
+  --tw-stone-800: #292524;
+  --tw-stone-900: #1c1917;
+  --tw-stone-950: #0c0a09;
+}
+
