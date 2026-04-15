@@ -9,23 +9,36 @@
     /* Tailwind (light) */
     --bg: var(--tw-stone-100);
     --card-bg: var(--tw-stone-50);
+    --card-border: var(--tw-stone-200);
     --text: var(--tw-stone-900);
     --text-muted: var(--tw-stone-600);
     --checkmark: var(--tw-stone-700);
     --button-bg: var(--tw-stone-200);
     --button-bg-hover: var(--tw-stone-300);
+    --button-text: var(--tw-stone-900);
+    --button-border: var(--tw-stone-200);
+    --button-border-hover: var(--tw-stone-300);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        /* Tailwind stone (dark) */
+        /* Warm, Cursor-like dark scheme (Tailwind stone) */
         --bg: var(--tw-stone-950);
         --card-bg: var(--tw-stone-900);
-        --text: var(--tw-stone-50);
-        --text-muted: var(--tw-stone-300);
+        --card-border: var(--tw-stone-800);
+        --text: var(--tw-stone-200);
+        --text-muted: var(--tw-stone-400);
         --checkmark: var(--tw-stone-200);
-        --button-bg: var(--tw-stone-800);
+        --button-bg: var(--tw-stone-50);
         --button-bg-hover: var(--tw-stone-700);
+        --button-text: var(--tw-stone-950);
+        --button-border: var(--tw-stone-700);
+        --button-border-hover: var(--tw-stone-600);
+        --button--secondary-bg: var(--tw-stone-800);
+        --button--secondary-bg-hover: var(--tw-stone-700);
+        --button--secondary-text: var(--tw-stone-50);
+        --button--secondary-border: var(--tw-stone-700);
+        --button--secondary-border-hover: var(--tw-stone-600);
     }
 }
 
@@ -42,7 +55,7 @@ body {
 .cards-container {
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
@@ -50,25 +63,41 @@ body {
 
 .card {
     background-color: var(--card-bg);
-    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
     padding: 16px 16px;
     width: 320px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.25),
+        0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .card-title {
-    font-size: 32px;
-    font-weight: 400;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 300;
     color: var(--text);
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 
 .card-price {
     font-size: 20px;
     color: var(--text-muted);
     margin-bottom: 24px;
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.card-price-amount {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.card-price-period {
+    font-size: 14px;
 }
 
 .card-content {
@@ -78,47 +107,58 @@ body {
 
 .includes-text {
     font-size: 16px;
-    color: var(--text);
-    margin-bottom: 16px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
 }
 
 .features-list {
     list-style: none;
-    padding: 4px 12px;
+    padding: 0;
 }
 
 .features-list li {
     display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-    font-size: 15px;
+    margin-bottom: 4px;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 300;
     color: var(--text);
 }
 
 .checkmark {
     color: var(--checkmark);
-    font-size: 18px;
-    margin-right: 12px;
-    font-weight: bold;
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: 300;
 }
 
-.download-button {
+.btn {
     width: fit-content;
     background-color: var(--button-bg);
-    border: none;
+    border: 1px solid var(--button-border);
     border-radius: 999px;
-    padding: 14px 24px;
+    padding: 12px 24px;
     font-size: 16px;
     font-weight: 500;
-    color: var(--text);
+    color: var(--button-text);
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    align-self: flex-start;
+    margin-top: 32px;
 }
 
-.download-button:hover {
-    background-color: var(--button-bg-hover);
+.btn--secondary {
+    background-color: var(--button--secondary-bg);
+    border: 1px solid var(--button--secondary-border);
+    color: var(--text);
 }
 
-.download-button:active {
+.btn:hover {
     background-color: var(--button-bg-hover);
+    border-color: var(--button-border-hover);
+}
+
+.btn:active {
+    background-color: var(--button-bg-hover);
+    border-color: var(--button-border-hover);
 }
